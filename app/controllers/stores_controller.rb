@@ -5,6 +5,10 @@ class StoresController < ApplicationController
   # GET /stores.json
   def index
     @stores = Store.all
+    if (params[:start_date].present? && params[:end_date].present?)
+      @stores = @stores.joins(:history_transfer_of_products).where.not(history_transfer_of_products: {date_in: Date.parse(params[:start_date])..Date.parse(params[:end_date])})
+      @stores = (@stores + Store.where.not(id: HistoryTransferOfProduct.pluck(:store_id).uniq)).uniq
+    end
   end
 
   # GET /stores/1
@@ -62,13 +66,13 @@ class StoresController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_store
-      @store = Store.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_store
+    @store = Store.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def store_params
-      params.require(:store).permit(:name, :address, :special_equipment, :area)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def store_params
+    params.require(:store).permit(:name, :address, :special_equipment, :area)
+  end
 end

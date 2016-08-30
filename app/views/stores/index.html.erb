@@ -4,6 +4,14 @@
 
 <h1>Склады</h1>
 
+<%= form_tag stores_path, :method => 'get' do %>
+    <%= date_field_tag :start_date, params[:start_date] %>
+    <%= date_field_tag :end_date, params[:end_date] %>
+    <%= submit_tag "Поиск пустых складов", :name => nil %>
+    <%= link_to 'Очистить', stores_path %>
+<% end %>
+</br>
+
 <table>
   <thead>
     <tr>
