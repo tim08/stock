@@ -1,26 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <h1>История передвижение товара</h1>
+<% if params[:store_id].present? %>
+    <%= form_tag history_transfer_of_products_path, :method => 'get' do %>
+        <%= date_field_tag :start_date, params[:start_date] %>
+        <%= date_field_tag :end_date, params[:end_date] %>
+        <%= hidden_field_tag :store_id, params[:store_id] %>
+        <%= submit_tag "Поиск", :name => nil %>
+    <% end %>
+    </br>
+<% end %>
 
 <table>
   <thead>
-    <tr>
-      <th>Дата и время</th>
-      <th>Номер товара</th>
-      <th>Номер склада</th>
-      <th>Описание</th>
-    </tr>
+  <tr>
+    <th>Дата и время</th>
+    <th>Номер товара</th>
+    <th>Номер склада</th>
+    <th>Описание</th>
+  </tr>
   </thead>
 
   <tbody>
-    <% @history_transfer_of_products.each do |history_transfer_of_product| %>
+  <% @history_transfer_of_products.each do |history_transfer_of_product| %>
       <tr>
         <td><%= history_transfer_of_product.date_in.strftime("%d-%m-%Y  %H:%M") %></td>
         <td><%= history_transfer_of_product.product_id %></td>
         <td><%= history_transfer_of_product.store_id %></td>
         <td><%= history_transfer_of_product.description %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

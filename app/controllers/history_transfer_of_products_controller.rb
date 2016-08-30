@@ -5,7 +5,9 @@ class HistoryTransferOfProductsController < ApplicationController
   # GET /history_transfer_of_products.json
   def index
     @history_transfer_of_products = HistoryTransferOfProduct.where(product_id: params[:product_id]) if params[:product_id].present?
-    @history_transfer_of_products = HistoryTransferOfProduct.where(store_id: params[:store_id]) if params[:store_id].present?
+    if params[:store_id].present?
+      @history_transfer_of_products = HistoryTransferOfProduct.where(store_id: params[:store_id], date_in: Date.parse(params[:start_date])..Date.parse(params[:end_date]))
+    end
   end
 
   # GET /history_transfer_of_products/1
