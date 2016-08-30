@@ -6,7 +6,8 @@ class HistoryTransferOfProductsController < ApplicationController
   def index
     @history_transfer_of_products = HistoryTransferOfProduct.where(product_id: params[:product_id]) if params[:product_id].present?
     if params[:store_id].present?
-      @history_transfer_of_products = HistoryTransferOfProduct.where(store_id: params[:store_id], date_in: Date.parse(params[:start_date])..Date.parse(params[:end_date]))
+      @history_transfer_of_products = HistoryTransferOfProduct.where(store_id: params[:store_id])
+      @history_transfer_of_products = @history_transfer_of_products.where(date_in: Date.parse(params[:start_date])..Date.parse(params[:end_date])) if (params[:start_date].present? && params[:end_date].present?)
     end
   end
 
