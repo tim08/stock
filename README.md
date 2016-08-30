@@ -1,24 +1,13 @@
-# README
+Задание 1.
+Необходимо хранить информацию о товарах (единице его измерения, виде его упаковки).
+Также необходимо хранить информацию о складах (адресе склада, наличие на нем
+специализированной техники, площади склада). Товар может перемещается со склада на
+склад.
+Нужно получать данные в табличном виде:
+ отчет о складах пустующих за определенный период времени, со всей
+информацией по складу
+ интенсивность использования складов
+ история движение товара на складе за определенный период
+ отчет о движении заданного товара по складам
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
