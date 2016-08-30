@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830152616) do
+ActiveRecord::Schema.define(version: 20160830202255) do
 
   create_table "history_transfer_of_products", force: :cascade do |t|
     t.datetime "date_in"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160830152616) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "store_id"
+    t.integer  "unit_q"
   end
 
   create_table "stores", force: :cascade do |t|

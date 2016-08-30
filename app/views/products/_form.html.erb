@@ -17,13 +17,18 @@
     </div>
 
     <div class="field">
+      <%= f.label 'Еденица измерения' %>
+      <%= f.number_field :unit_q %>
+    </div>
+
+    <div class="field">
       <%= f.label 'Вид упаковки' %>
       <%= f.select :kind_of_packing_id, KindOfPacking.all.collect { |x| [x.name, x.id] } %>
     </div>
 
     <div class="field">
       <%= f.label 'Склад' %>
-      <%= f.select :store_id, Store.all.collect { |x| [x.name, x.id] }, :include_blank => true%>
+      <%= f.select :store_id, Store.all.collect { |x| [x.name, x.id] }%>
     </div>
 
     <div class="actions">
