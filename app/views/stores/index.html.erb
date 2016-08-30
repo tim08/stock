@@ -11,6 +11,7 @@
       <th>Адрес</th>
       <th>Наличие спец.техники</th>
       <th>Площадь</th>
+      <th>Интенсивность</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= store.address %></td>
         <td><%= store.special_equipment ? 'Да' : 'Нет' %></td>
         <td><%= store.area %></td>
+        <td><%= store.history_transfer_of_products.count %></td>
         <td><%= link_to 'Редактирование', edit_store_path(store) %></td>
         <td><%= link_to 'История движение товара на складе ',  history_transfer_of_products_path(:store_id => store.id) %></td>
         <td><%= link_to 'Удаление', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
