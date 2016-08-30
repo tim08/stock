@@ -1,0 +1,1 @@
+json.partial! "history_transfer_of_products/history_transfer_of_product", history_transfer_of_product: @history_transfer_of_product

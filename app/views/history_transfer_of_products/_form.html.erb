@@ -1,0 +1,37 @@
+<%= form_for(history_transfer_of_product) do |f| %>
+  <% if history_transfer_of_product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(history_transfer_of_product.errors.count, "error") %> prohibited this history_transfer_of_product from being saved:</h2>
+
+      <ul>
+      <% history_transfer_of_product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date_in %>
+    <%= f.datetime_select :date_in %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date_out %>
+    <%= f.datetime_select :date_out %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_id %>
+    <%= f.number_field :product_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

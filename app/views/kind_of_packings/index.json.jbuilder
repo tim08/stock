@@ -1,0 +1,1 @@
+json.array! @kind_of_packings, partial: 'kind_of_packings/kind_of_packing', as: :kind_of_packing

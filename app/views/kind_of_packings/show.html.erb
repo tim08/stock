@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @kind_of_packing.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @kind_of_packing.description %>
+</p>
+
+<%= link_to 'Edit', edit_kind_of_packing_path(@kind_of_packing) %> |
+<%= link_to 'Back', kind_of_packings_path %>

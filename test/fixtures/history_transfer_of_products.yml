@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_in: 2016-08-30 17:46:45
+  date_out: 2016-08-30 17:46:45
+  product_id: 1
+  description: MyString
+
+two:
+  date_in: 2016-08-30 17:46:45
+  date_out: 2016-08-30 17:46:45
+  product_id: 1
+  description: MyString

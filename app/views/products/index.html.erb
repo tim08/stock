@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Добавить новый товар', new_product_path %>
+<h1>Товары</h1>
+
+
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Наименование</th>
+      <th>Вид упаковки</th>
+      <th colspan="3">Работа с товаром</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.kind_of_packing.name %></td>
+        <td><%= link_to 'Редактирование', edit_product_path(product) %></td>
+        <td><%= link_to 'Отчет о движении заданного товара по складам', history_transfer_of_products_path(:product_id => product.id) %></td>
+        <td><%= link_to 'Удаление', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+

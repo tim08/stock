@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>История передвижение товара</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Дата и время</th>
+      <th>Номер товара</th>
+      <th>Номер склада</th>
+      <th>Описание</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @history_transfer_of_products.each do |history_transfer_of_product| %>
+      <tr>
+        <td><%= history_transfer_of_product.date_in.strftime("%d-%m-%Y  %H:%M") %></td>
+        <td><%= history_transfer_of_product.product_id %></td>
+        <td><%= history_transfer_of_product.store_id %></td>
+        <td><%= history_transfer_of_product.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

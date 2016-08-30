@@ -1,0 +1,1 @@
+json.partial! "kind_of_packings/kind_of_packing", kind_of_packing: @kind_of_packing

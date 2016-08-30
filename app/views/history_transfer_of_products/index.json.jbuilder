@@ -1,0 +1,1 @@
+json.array! @history_transfer_of_products, partial: 'history_transfer_of_products/history_transfer_of_product', as: :history_transfer_of_product

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Добавить новый склад', new_store_path %>
+
+<h1>Склады</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Адрес</th>
+      <th>Наличие спец.техники</th>
+      <th>Площадь</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stores.each do |store| %>
+      <tr>
+        <td><%= store.name %></td>
+        <td><%= store.address %></td>
+        <td><%= store.special_equipment ? 'Да' : 'Нет' %></td>
+        <td><%= store.area %></td>
+        <td><%= link_to 'Редактирование', edit_store_path(store) %></td>
+        <td><%= link_to 'История движение товара на складе ',  history_transfer_of_products_path(:store_id => store.id) %></td>
+        <td><%= link_to 'Удаление', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Добавить новый вид упаковки', new_kind_of_packing_path %>
+
+<h1>Виды упаковки</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Описание</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kind_of_packings.each do |kind_of_packing| %>
+      <tr>
+        <td><%= kind_of_packing.name %></td>
+        <td><%= kind_of_packing.description %></td>
+        <td><%= link_to 'Редактирование', edit_kind_of_packing_path(kind_of_packing) %></td>
+        <td><%= link_to 'Удаление', kind_of_packing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

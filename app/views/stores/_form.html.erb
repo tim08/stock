@@ -1,0 +1,37 @@
+<%= form_for(store) do |f| %>
+  <% if store.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(store.errors.count, "error") %> prohibited this store from being saved:</h2>
+
+      <ul>
+      <% store.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Название' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Адрес' %>
+    <%= f.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= 'Наличие спец.техники' %>
+    <%= f.check_box :special_equipment %>
+  </div>
+
+  <div class="field">
+    <%= f.label 'Площадь' %>
+    <%= f.number_field :area %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+json.extract! history_transfer_of_product, :id, :date_in, :date_out, :product_id, :description, :created_at, :updated_at
+json.url history_transfer_of_product_url(history_transfer_of_product, format: :json)

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date in:</strong>
+  <%= @history_transfer_of_product.date_in %>
+</p>
+
+<p>
+  <strong>Date out:</strong>
+  <%= @history_transfer_of_product.date_out %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @history_transfer_of_product.product_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @history_transfer_of_product.description %>
+</p>
+
+<%= link_to 'Edit', edit_history_transfer_of_product_path(@history_transfer_of_product) %> |
+<%= link_to 'Back', history_transfer_of_products_path %>

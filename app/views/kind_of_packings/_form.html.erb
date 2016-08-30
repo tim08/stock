@@ -1,0 +1,27 @@
+<%= form_for(kind_of_packing) do |f| %>
+  <% if kind_of_packing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kind_of_packing.errors.count, "error") %> prohibited this kind_of_packing from being saved:</h2>
+
+      <ul>
+      <% kind_of_packing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
