@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'game_in_towns/index'
+
   root to: 'main#index'
 
   resources :history_transfer_of_products

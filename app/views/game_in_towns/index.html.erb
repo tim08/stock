@@ -1,0 +1,5 @@
+<h3> Текущий: <%= $current_town %></h3>
+
+<%= form_tag game_in_towns_index_url, :method => :get do %>
+    <%= text_field_tag :town %>
+<% end %>

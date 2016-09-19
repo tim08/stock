@@ -1,0 +1,2 @@
+module GameInTownsHelper
+end
