@@ -1,3 +1,4 @@
+require 'sidekiq/web'
 Rails.application.routes.draw do
   get 'game_in_towns/index'
 
@@ -7,5 +8,7 @@ Rails.application.routes.draw do
   resources :products
   resources :stores
   resources :kind_of_packings
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  mount ActionCable.server => '/cable'
+  mount Sidekiq::Web => '/sidekiq'
 end
