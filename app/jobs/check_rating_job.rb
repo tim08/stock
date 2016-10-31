@@ -2,6 +2,6 @@ class CheckRatingJob < ApplicationJob
   queue_as :default
 
   def perform(*args)
-    # Do something later
+    p 'check rating'
   end
 end
